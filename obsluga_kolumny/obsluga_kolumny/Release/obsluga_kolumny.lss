@@ -1,0 +1,1085 @@
+
+obsluga_kolumny.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000936  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000008e2  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000936  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000968  2**2
+                  CONTENTS, READONLY
+  4 .debug_info   000006cc  00000000  00000000  000009a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000066e  00000000  00000000  00001074  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000151  00000000  00000000  000016e2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    00000252  00000000  00000000  00001833  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+   8:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+   c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  10:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  14:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  18:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  1c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  20:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  24:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  28:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  2c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  30:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  34:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  38:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  3c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  40:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  44:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  48:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  4c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  50:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  54:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  58:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  5c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  60:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  64:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  68:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  6c:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  70:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  74:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+  78:	0c 94 48 00 	jmp	0x90	; 0x90 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d0 e1       	ldi	r29, 0x10	; 16
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+  88:	0e 94 80 03 	call	0x700	; 0x700 <main>
+  8c:	0c 94 6f 04 	jmp	0x8de	; 0x8de <_exit>
+
+00000090 <__bad_interrupt>:
+  90:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000094 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb>:
+  94:	2f 92       	push	r2
+  96:	3f 92       	push	r3
+  98:	4f 92       	push	r4
+  9a:	5f 92       	push	r5
+  9c:	6f 92       	push	r6
+  9e:	7f 92       	push	r7
+  a0:	8f 92       	push	r8
+  a2:	9f 92       	push	r9
+  a4:	af 92       	push	r10
+  a6:	bf 92       	push	r11
+  a8:	cf 92       	push	r12
+  aa:	df 92       	push	r13
+  ac:	ef 92       	push	r14
+  ae:	ff 92       	push	r15
+  b0:	0f 93       	push	r16
+  b2:	1f 93       	push	r17
+  b4:	cf 93       	push	r28
+  b6:	df 93       	push	r29
+  b8:	cd b7       	in	r28, 0x3d	; 61
+  ba:	de b7       	in	r29, 0x3e	; 62
+  bc:	29 97       	sbiw	r28, 0x09	; 9
+  be:	0f b6       	in	r0, 0x3f	; 63
+  c0:	f8 94       	cli
+  c2:	de bf       	out	0x3e, r29	; 62
+  c4:	0f be       	out	0x3f, r0	; 63
+  c6:	cd bf       	out	0x3d, r28	; 61
+  c8:	3c 01       	movw	r6, r24
+  ca:	7a 83       	std	Y+2, r23	; 0x02
+  cc:	69 83       	std	Y+1, r22	; 0x01
+  ce:	4b 83       	std	Y+3, r20	; 0x03
+  d0:	19 01       	movw	r2, r18
+  d2:	fd 82       	std	Y+5, r15	; 0x05
+  d4:	ec 82       	std	Y+4, r14	; 0x04
+  d6:	ce 82       	std	Y+6, r12	; 0x06
+  d8:	b8 86       	std	Y+8, r11	; 0x08
+  da:	af 82       	std	Y+7, r10	; 0x07
+  dc:	89 86       	std	Y+9, r8	; 0x09
+  de:	1f 8d       	ldd	r17, Y+31	; 0x1f
+  e0:	e8 a0       	ldd	r14, Y+32	; 0x20
+  e2:	f9 a0       	ldd	r15, Y+33	; 0x21
+  e4:	4c 01       	movw	r8, r24
+  e6:	86 e0       	ldi	r24, 0x06	; 6
+  e8:	88 0e       	add	r8, r24
+  ea:	91 1c       	adc	r9, r1
+  ec:	c4 01       	movw	r24, r8
+  ee:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+  f2:	53 01       	movw	r10, r6
+  f4:	ad e0       	ldi	r26, 0x0D	; 13
+  f6:	aa 0e       	add	r10, r26
+  f8:	b1 1c       	adc	r11, r1
+  fa:	c5 01       	movw	r24, r10
+  fc:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 100:	23 01       	movw	r4, r6
+ 102:	b4 e1       	ldi	r27, 0x14	; 20
+ 104:	4b 0e       	add	r4, r27
+ 106:	51 1c       	adc	r5, r1
+ 108:	c2 01       	movw	r24, r4
+ 10a:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 10e:	63 01       	movw	r12, r6
+ 110:	eb e1       	ldi	r30, 0x1B	; 27
+ 112:	ce 0e       	add	r12, r30
+ 114:	d1 1c       	adc	r13, r1
+ 116:	c6 01       	movw	r24, r12
+ 118:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 11c:	d3 01       	movw	r26, r6
+ 11e:	11 96       	adiw	r26, 0x01	; 1
+ 120:	fc 92       	st	X, r15
+ 122:	ee 92       	st	-X, r14
+ 124:	c7 01       	movw	r24, r14
+ 126:	01 96       	adiw	r24, 0x01	; 1
+ 128:	13 96       	adiw	r26, 0x03	; 3
+ 12a:	9c 93       	st	X, r25
+ 12c:	8e 93       	st	-X, r24
+ 12e:	12 97       	sbiw	r26, 0x02	; 2
+ 130:	b2 e0       	ldi	r27, 0x02	; 2
+ 132:	eb 0e       	add	r14, r27
+ 134:	f1 1c       	adc	r15, r1
+ 136:	f3 01       	movw	r30, r6
+ 138:	f5 82       	std	Z+5, r15	; 0x05
+ 13a:	e4 82       	std	Z+4, r14	; 0x04
+ 13c:	8e 8d       	ldd	r24, Y+30	; 0x1e
+ 13e:	82 a3       	std	Z+34, r24	; 0x22
+ 140:	4b 81       	ldd	r20, Y+3	; 0x03
+ 142:	69 81       	ldd	r22, Y+1	; 0x01
+ 144:	7a 81       	ldd	r23, Y+2	; 0x02
+ 146:	c4 01       	movw	r24, r8
+ 148:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 14c:	40 2f       	mov	r20, r16
+ 14e:	b1 01       	movw	r22, r2
+ 150:	c5 01       	movw	r24, r10
+ 152:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 156:	49 85       	ldd	r20, Y+9	; 0x09
+ 158:	6f 81       	ldd	r22, Y+7	; 0x07
+ 15a:	78 85       	ldd	r23, Y+8	; 0x08
+ 15c:	c6 01       	movw	r24, r12
+ 15e:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 162:	4e 81       	ldd	r20, Y+6	; 0x06
+ 164:	6c 81       	ldd	r22, Y+4	; 0x04
+ 166:	7d 81       	ldd	r23, Y+5	; 0x05
+ 168:	c2 01       	movw	r24, r4
+ 16a:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 16e:	d3 01       	movw	r26, r6
+ 170:	ed 91       	ld	r30, X+
+ 172:	fc 91       	ld	r31, X
+ 174:	8b a1       	ldd	r24, Y+35	; 0x23
+ 176:	88 23       	and	r24, r24
+ 178:	19 f0       	breq	.+6      	; 0x180 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0xec>
+ 17a:	80 81       	ld	r24, Z
+ 17c:	88 60       	ori	r24, 0x08	; 8
+ 17e:	02 c0       	rjmp	.+4      	; 0x184 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0xf0>
+ 180:	80 81       	ld	r24, Z
+ 182:	87 7f       	andi	r24, 0xF7	; 247
+ 184:	80 83       	st	Z, r24
+ 186:	d3 01       	movw	r26, r6
+ 188:	ed 91       	ld	r30, X+
+ 18a:	fc 91       	ld	r31, X
+ 18c:	8c a1       	ldd	r24, Y+36	; 0x24
+ 18e:	88 23       	and	r24, r24
+ 190:	19 f0       	breq	.+6      	; 0x198 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x104>
+ 192:	80 81       	ld	r24, Z
+ 194:	84 60       	ori	r24, 0x04	; 4
+ 196:	02 c0       	rjmp	.+4      	; 0x19c <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x108>
+ 198:	80 81       	ld	r24, Z
+ 19a:	8b 7f       	andi	r24, 0xFB	; 251
+ 19c:	80 83       	st	Z, r24
+ 19e:	10 31       	cpi	r17, 0x10	; 16
+ 1a0:	09 f4       	brne	.+2      	; 0x1a4 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x110>
+ 1a2:	41 c0       	rjmp	.+130    	; 0x226 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x192>
+ 1a4:	78 f4       	brcc	.+30     	; 0x1c4 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x130>
+ 1a6:	14 30       	cpi	r17, 0x04	; 4
+ 1a8:	49 f1       	breq	.+82     	; 0x1fc <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x168>
+ 1aa:	18 30       	cpi	r17, 0x08	; 8
+ 1ac:	a1 f1       	breq	.+104    	; 0x216 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x182>
+ 1ae:	12 30       	cpi	r17, 0x02	; 2
+ 1b0:	09 f0       	breq	.+2      	; 0x1b4 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x120>
+ 1b2:	61 c0       	rjmp	.+194    	; 0x276 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1e2>
+ 1b4:	d3 01       	movw	r26, r6
+ 1b6:	12 96       	adiw	r26, 0x02	; 2
+ 1b8:	ed 91       	ld	r30, X+
+ 1ba:	fc 91       	ld	r31, X
+ 1bc:	13 97       	sbiw	r26, 0x03	; 3
+ 1be:	80 81       	ld	r24, Z
+ 1c0:	81 60       	ori	r24, 0x01	; 1
+ 1c2:	23 c0       	rjmp	.+70     	; 0x20a <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x176>
+ 1c4:	10 34       	cpi	r17, 0x40	; 64
+ 1c6:	09 f4       	brne	.+2      	; 0x1ca <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x136>
+ 1c8:	41 c0       	rjmp	.+130    	; 0x24c <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1b8>
+ 1ca:	10 38       	cpi	r17, 0x80	; 128
+ 1cc:	09 f4       	brne	.+2      	; 0x1d0 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x13c>
+ 1ce:	46 c0       	rjmp	.+140    	; 0x25c <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1c8>
+ 1d0:	10 32       	cpi	r17, 0x20	; 32
+ 1d2:	09 f0       	breq	.+2      	; 0x1d6 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x142>
+ 1d4:	50 c0       	rjmp	.+160    	; 0x276 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1e2>
+ 1d6:	d3 01       	movw	r26, r6
+ 1d8:	12 96       	adiw	r26, 0x02	; 2
+ 1da:	ed 91       	ld	r30, X+
+ 1dc:	fc 91       	ld	r31, X
+ 1de:	13 97       	sbiw	r26, 0x03	; 3
+ 1e0:	80 81       	ld	r24, Z
+ 1e2:	8e 7f       	andi	r24, 0xFE	; 254
+ 1e4:	80 83       	st	Z, r24
+ 1e6:	ed 91       	ld	r30, X+
+ 1e8:	fc 91       	ld	r31, X
+ 1ea:	11 97       	sbiw	r26, 0x01	; 1
+ 1ec:	80 81       	ld	r24, Z
+ 1ee:	82 60       	ori	r24, 0x02	; 2
+ 1f0:	80 83       	st	Z, r24
+ 1f2:	ed 91       	ld	r30, X+
+ 1f4:	fc 91       	ld	r31, X
+ 1f6:	80 81       	ld	r24, Z
+ 1f8:	8e 7f       	andi	r24, 0xFE	; 254
+ 1fa:	3c c0       	rjmp	.+120    	; 0x274 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1e0>
+ 1fc:	d3 01       	movw	r26, r6
+ 1fe:	12 96       	adiw	r26, 0x02	; 2
+ 200:	ed 91       	ld	r30, X+
+ 202:	fc 91       	ld	r31, X
+ 204:	13 97       	sbiw	r26, 0x03	; 3
+ 206:	80 81       	ld	r24, Z
+ 208:	8e 7f       	andi	r24, 0xFE	; 254
+ 20a:	80 83       	st	Z, r24
+ 20c:	ed 91       	ld	r30, X+
+ 20e:	fc 91       	ld	r31, X
+ 210:	80 81       	ld	r24, Z
+ 212:	8c 7f       	andi	r24, 0xFC	; 252
+ 214:	2f c0       	rjmp	.+94     	; 0x274 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1e0>
+ 216:	d3 01       	movw	r26, r6
+ 218:	12 96       	adiw	r26, 0x02	; 2
+ 21a:	ed 91       	ld	r30, X+
+ 21c:	fc 91       	ld	r31, X
+ 21e:	13 97       	sbiw	r26, 0x03	; 3
+ 220:	80 81       	ld	r24, Z
+ 222:	81 60       	ori	r24, 0x01	; 1
+ 224:	07 c0       	rjmp	.+14     	; 0x234 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1a0>
+ 226:	d3 01       	movw	r26, r6
+ 228:	12 96       	adiw	r26, 0x02	; 2
+ 22a:	ed 91       	ld	r30, X+
+ 22c:	fc 91       	ld	r31, X
+ 22e:	13 97       	sbiw	r26, 0x03	; 3
+ 230:	80 81       	ld	r24, Z
+ 232:	8e 7f       	andi	r24, 0xFE	; 254
+ 234:	80 83       	st	Z, r24
+ 236:	ed 91       	ld	r30, X+
+ 238:	fc 91       	ld	r31, X
+ 23a:	11 97       	sbiw	r26, 0x01	; 1
+ 23c:	80 81       	ld	r24, Z
+ 23e:	81 60       	ori	r24, 0x01	; 1
+ 240:	80 83       	st	Z, r24
+ 242:	ed 91       	ld	r30, X+
+ 244:	fc 91       	ld	r31, X
+ 246:	80 81       	ld	r24, Z
+ 248:	8d 7f       	andi	r24, 0xFD	; 253
+ 24a:	14 c0       	rjmp	.+40     	; 0x274 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1e0>
+ 24c:	d3 01       	movw	r26, r6
+ 24e:	12 96       	adiw	r26, 0x02	; 2
+ 250:	ed 91       	ld	r30, X+
+ 252:	fc 91       	ld	r31, X
+ 254:	13 97       	sbiw	r26, 0x03	; 3
+ 256:	80 81       	ld	r24, Z
+ 258:	81 60       	ori	r24, 0x01	; 1
+ 25a:	07 c0       	rjmp	.+14     	; 0x26a <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1d6>
+ 25c:	d3 01       	movw	r26, r6
+ 25e:	12 96       	adiw	r26, 0x02	; 2
+ 260:	ed 91       	ld	r30, X+
+ 262:	fc 91       	ld	r31, X
+ 264:	13 97       	sbiw	r26, 0x03	; 3
+ 266:	80 81       	ld	r24, Z
+ 268:	8e 7f       	andi	r24, 0xFE	; 254
+ 26a:	80 83       	st	Z, r24
+ 26c:	ed 91       	ld	r30, X+
+ 26e:	fc 91       	ld	r31, X
+ 270:	80 81       	ld	r24, Z
+ 272:	83 60       	ori	r24, 0x03	; 3
+ 274:	80 83       	st	Z, r24
+ 276:	f3 01       	movw	r30, r6
+ 278:	82 a1       	ldd	r24, Z+34	; 0x22
+ 27a:	01 90       	ld	r0, Z+
+ 27c:	f0 81       	ld	r31, Z
+ 27e:	e0 2d       	mov	r30, r0
+ 280:	88 23       	and	r24, r24
+ 282:	39 f0       	breq	.+14     	; 0x292 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x1fe>
+ 284:	80 81       	ld	r24, Z
+ 286:	80 61       	ori	r24, 0x10	; 16
+ 288:	80 83       	st	Z, r24
+ 28a:	25 9a       	sbi	0x04, 5	; 4
+ 28c:	26 98       	cbi	0x04, 6	; 4
+ 28e:	24 9a       	sbi	0x04, 4	; 4
+ 290:	03 c0       	rjmp	.+6      	; 0x298 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x204>
+ 292:	80 81       	ld	r24, Z
+ 294:	8f 7e       	andi	r24, 0xEF	; 239
+ 296:	80 83       	st	Z, r24
+ 298:	d3 01       	movw	r26, r6
+ 29a:	ed 91       	ld	r30, X+
+ 29c:	fc 91       	ld	r31, X
+ 29e:	8d a1       	ldd	r24, Y+37	; 0x25
+ 2a0:	88 23       	and	r24, r24
+ 2a2:	19 f0       	breq	.+6      	; 0x2aa <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x216>
+ 2a4:	80 81       	ld	r24, Z
+ 2a6:	80 62       	ori	r24, 0x20	; 32
+ 2a8:	02 c0       	rjmp	.+4      	; 0x2ae <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x21a>
+ 2aa:	80 81       	ld	r24, Z
+ 2ac:	8f 7d       	andi	r24, 0xDF	; 223
+ 2ae:	80 83       	st	Z, r24
+ 2b0:	d3 01       	movw	r26, r6
+ 2b2:	ed 91       	ld	r30, X+
+ 2b4:	fc 91       	ld	r31, X
+ 2b6:	8a a1       	ldd	r24, Y+34	; 0x22
+ 2b8:	88 23       	and	r24, r24
+ 2ba:	19 f0       	breq	.+6      	; 0x2c2 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x22e>
+ 2bc:	80 81       	ld	r24, Z
+ 2be:	80 68       	ori	r24, 0x80	; 128
+ 2c0:	02 c0       	rjmp	.+4      	; 0x2c6 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb+0x232>
+ 2c2:	80 81       	ld	r24, Z
+ 2c4:	8f 77       	andi	r24, 0x7F	; 127
+ 2c6:	80 83       	st	Z, r24
+ 2c8:	29 96       	adiw	r28, 0x09	; 9
+ 2ca:	0f b6       	in	r0, 0x3f	; 63
+ 2cc:	f8 94       	cli
+ 2ce:	de bf       	out	0x3e, r29	; 62
+ 2d0:	0f be       	out	0x3f, r0	; 63
+ 2d2:	cd bf       	out	0x3d, r28	; 61
+ 2d4:	df 91       	pop	r29
+ 2d6:	cf 91       	pop	r28
+ 2d8:	1f 91       	pop	r17
+ 2da:	0f 91       	pop	r16
+ 2dc:	ff 90       	pop	r15
+ 2de:	ef 90       	pop	r14
+ 2e0:	df 90       	pop	r13
+ 2e2:	cf 90       	pop	r12
+ 2e4:	bf 90       	pop	r11
+ 2e6:	af 90       	pop	r10
+ 2e8:	9f 90       	pop	r9
+ 2ea:	8f 90       	pop	r8
+ 2ec:	7f 90       	pop	r7
+ 2ee:	6f 90       	pop	r6
+ 2f0:	5f 90       	pop	r5
+ 2f2:	4f 90       	pop	r4
+ 2f4:	3f 90       	pop	r3
+ 2f6:	2f 90       	pop	r2
+ 2f8:	08 95       	ret
+
+000002fa <_ZN9SPI_class9SPIenableEv>:
+ 2fa:	cf 92       	push	r12
+ 2fc:	df 92       	push	r13
+ 2fe:	ef 92       	push	r14
+ 300:	ff 92       	push	r15
+ 302:	0f 93       	push	r16
+ 304:	1f 93       	push	r17
+ 306:	cf 93       	push	r28
+ 308:	df 93       	push	r29
+ 30a:	ec 01       	movw	r28, r24
+ 30c:	2a a1       	ldd	r18, Y+34	; 0x22
+ 30e:	06 96       	adiw	r24, 0x06	; 6
+ 310:	ae 01       	movw	r20, r28
+ 312:	45 5e       	subi	r20, 0xE5	; 229
+ 314:	5f 4f       	sbci	r21, 0xFF	; 255
+ 316:	6a 01       	movw	r12, r20
+ 318:	4e 50       	subi	r20, 0x0E	; 14
+ 31a:	51 09       	sbc	r21, r1
+ 31c:	7a 01       	movw	r14, r20
+ 31e:	8e 01       	movw	r16, r28
+ 320:	0c 5e       	subi	r16, 0xEC	; 236
+ 322:	1f 4f       	sbci	r17, 0xFF	; 255
+ 324:	22 23       	and	r18, r18
+ 326:	61 f0       	breq	.+24     	; 0x340 <_ZN9SPI_class9SPIenableEv+0x46>
+ 328:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 32c:	c6 01       	movw	r24, r12
+ 32e:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 332:	c7 01       	movw	r24, r14
+ 334:	0e 94 5a 04 	call	0x8b4	; 0x8b4 <_ZN10PinControl10setAsInputEv>
+ 338:	c8 01       	movw	r24, r16
+ 33a:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 33e:	0b c0       	rjmp	.+22     	; 0x356 <_ZN9SPI_class9SPIenableEv+0x5c>
+ 340:	0e 94 5a 04 	call	0x8b4	; 0x8b4 <_ZN10PinControl10setAsInputEv>
+ 344:	c6 01       	movw	r24, r12
+ 346:	0e 94 5a 04 	call	0x8b4	; 0x8b4 <_ZN10PinControl10setAsInputEv>
+ 34a:	c7 01       	movw	r24, r14
+ 34c:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 350:	c8 01       	movw	r24, r16
+ 352:	0e 94 5a 04 	call	0x8b4	; 0x8b4 <_ZN10PinControl10setAsInputEv>
+ 356:	e8 81       	ld	r30, Y
+ 358:	f9 81       	ldd	r31, Y+1	; 0x01
+ 35a:	80 81       	ld	r24, Z
+ 35c:	80 64       	ori	r24, 0x40	; 64
+ 35e:	80 83       	st	Z, r24
+ 360:	df 91       	pop	r29
+ 362:	cf 91       	pop	r28
+ 364:	1f 91       	pop	r17
+ 366:	0f 91       	pop	r16
+ 368:	ff 90       	pop	r15
+ 36a:	ef 90       	pop	r14
+ 36c:	df 90       	pop	r13
+ 36e:	cf 90       	pop	r12
+ 370:	08 95       	ret
+
+00000372 <_ZN9SPI_class9writeCharEc>:
+ 372:	dc 01       	movw	r26, r24
+ 374:	14 96       	adiw	r26, 0x04	; 4
+ 376:	ed 91       	ld	r30, X+
+ 378:	fc 91       	ld	r31, X
+ 37a:	15 97       	sbiw	r26, 0x05	; 5
+ 37c:	60 83       	st	Z, r22
+ 37e:	08 95       	ret
+
+00000380 <_ZN9SPI_class8readCharEv>:
+ 380:	dc 01       	movw	r26, r24
+ 382:	14 96       	adiw	r26, 0x04	; 4
+ 384:	ed 91       	ld	r30, X+
+ 386:	fc 91       	ld	r31, X
+ 388:	15 97       	sbiw	r26, 0x05	; 5
+ 38a:	80 81       	ld	r24, Z
+ 38c:	08 95       	ret
+
+0000038e <_ZN7ds18b20C1EPVhh>:
+ 38e:	ff 92       	push	r15
+ 390:	0f 93       	push	r16
+ 392:	1f 93       	push	r17
+ 394:	cf 93       	push	r28
+ 396:	df 93       	push	r29
+ 398:	ec 01       	movw	r28, r24
+ 39a:	8b 01       	movw	r16, r22
+ 39c:	f4 2e       	mov	r15, r20
+ 39e:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 3a2:	4f 2d       	mov	r20, r15
+ 3a4:	b8 01       	movw	r22, r16
+ 3a6:	ce 01       	movw	r24, r28
+ 3a8:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 3ac:	ce 01       	movw	r24, r28
+ 3ae:	0e 94 5a 04 	call	0x8b4	; 0x8b4 <_ZN10PinControl10setAsInputEv>
+ 3b2:	ce 01       	movw	r24, r28
+ 3b4:	df 91       	pop	r29
+ 3b6:	cf 91       	pop	r28
+ 3b8:	1f 91       	pop	r17
+ 3ba:	0f 91       	pop	r16
+ 3bc:	ff 90       	pop	r15
+ 3be:	0c 94 33 04 	jmp	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+
+000003c2 <_ZN7hd44780C1EPVhhS1_hS1_hS1_hS1_hS1_h>:
+ 3c2:	2f 92       	push	r2
+ 3c4:	3f 92       	push	r3
+ 3c6:	4f 92       	push	r4
+ 3c8:	5f 92       	push	r5
+ 3ca:	6f 92       	push	r6
+ 3cc:	7f 92       	push	r7
+ 3ce:	8f 92       	push	r8
+ 3d0:	9f 92       	push	r9
+ 3d2:	af 92       	push	r10
+ 3d4:	bf 92       	push	r11
+ 3d6:	cf 92       	push	r12
+ 3d8:	df 92       	push	r13
+ 3da:	ef 92       	push	r14
+ 3dc:	ff 92       	push	r15
+ 3de:	0f 93       	push	r16
+ 3e0:	1f 93       	push	r17
+ 3e2:	cf 93       	push	r28
+ 3e4:	df 93       	push	r29
+ 3e6:	cd b7       	in	r28, 0x3d	; 61
+ 3e8:	de b7       	in	r29, 0x3e	; 62
+ 3ea:	2e 97       	sbiw	r28, 0x0e	; 14
+ 3ec:	0f b6       	in	r0, 0x3f	; 63
+ 3ee:	f8 94       	cli
+ 3f0:	de bf       	out	0x3e, r29	; 62
+ 3f2:	0f be       	out	0x3f, r0	; 63
+ 3f4:	cd bf       	out	0x3d, r28	; 61
+ 3f6:	3c 01       	movw	r6, r24
+ 3f8:	7a 83       	std	Y+2, r23	; 0x02
+ 3fa:	69 83       	std	Y+1, r22	; 0x01
+ 3fc:	94 2e       	mov	r9, r20
+ 3fe:	3c 83       	std	Y+4, r19	; 0x04
+ 400:	2b 83       	std	Y+3, r18	; 0x03
+ 402:	30 2e       	mov	r3, r16
+ 404:	fe 82       	std	Y+6, r15	; 0x06
+ 406:	ed 82       	std	Y+5, r14	; 0x05
+ 408:	2c 2c       	mov	r2, r12
+ 40a:	b8 86       	std	Y+8, r11	; 0x08
+ 40c:	af 82       	std	Y+7, r10	; 0x07
+ 40e:	8b a1       	ldd	r24, Y+35	; 0x23
+ 410:	9c a1       	ldd	r25, Y+36	; 0x24
+ 412:	9a 87       	std	Y+10, r25	; 0x0a
+ 414:	89 87       	std	Y+9, r24	; 0x09
+ 416:	9d a1       	ldd	r25, Y+37	; 0x25
+ 418:	9b 87       	std	Y+11, r25	; 0x0b
+ 41a:	8e a1       	ldd	r24, Y+38	; 0x26
+ 41c:	9f a1       	ldd	r25, Y+39	; 0x27
+ 41e:	9d 87       	std	Y+13, r25	; 0x0d
+ 420:	8c 87       	std	Y+12, r24	; 0x0c
+ 422:	98 a5       	ldd	r25, Y+40	; 0x28
+ 424:	9e 87       	std	Y+14, r25	; 0x0e
+ 426:	c3 01       	movw	r24, r6
+ 428:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 42c:	53 01       	movw	r10, r6
+ 42e:	87 e0       	ldi	r24, 0x07	; 7
+ 430:	a8 0e       	add	r10, r24
+ 432:	b1 1c       	adc	r11, r1
+ 434:	c5 01       	movw	r24, r10
+ 436:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 43a:	63 01       	movw	r12, r6
+ 43c:	9e e0       	ldi	r25, 0x0E	; 14
+ 43e:	c9 0e       	add	r12, r25
+ 440:	d1 1c       	adc	r13, r1
+ 442:	c6 01       	movw	r24, r12
+ 444:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 448:	73 01       	movw	r14, r6
+ 44a:	85 e1       	ldi	r24, 0x15	; 21
+ 44c:	e8 0e       	add	r14, r24
+ 44e:	f1 1c       	adc	r15, r1
+ 450:	c7 01       	movw	r24, r14
+ 452:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 456:	83 01       	movw	r16, r6
+ 458:	04 5e       	subi	r16, 0xE4	; 228
+ 45a:	1f 4f       	sbci	r17, 0xFF	; 255
+ 45c:	c8 01       	movw	r24, r16
+ 45e:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 462:	23 01       	movw	r4, r6
+ 464:	93 e2       	ldi	r25, 0x23	; 35
+ 466:	49 0e       	add	r4, r25
+ 468:	51 1c       	adc	r5, r1
+ 46a:	c2 01       	movw	r24, r4
+ 46c:	0e 94 13 04 	call	0x826	; 0x826 <_ZN10PinControlC1Ev>
+ 470:	49 2d       	mov	r20, r9
+ 472:	69 81       	ldd	r22, Y+1	; 0x01
+ 474:	7a 81       	ldd	r23, Y+2	; 0x02
+ 476:	c3 01       	movw	r24, r6
+ 478:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 47c:	43 2d       	mov	r20, r3
+ 47e:	6b 81       	ldd	r22, Y+3	; 0x03
+ 480:	7c 81       	ldd	r23, Y+4	; 0x04
+ 482:	c5 01       	movw	r24, r10
+ 484:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 488:	42 2d       	mov	r20, r2
+ 48a:	6d 81       	ldd	r22, Y+5	; 0x05
+ 48c:	7e 81       	ldd	r23, Y+6	; 0x06
+ 48e:	c6 01       	movw	r24, r12
+ 490:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 494:	48 2d       	mov	r20, r8
+ 496:	6f 81       	ldd	r22, Y+7	; 0x07
+ 498:	78 85       	ldd	r23, Y+8	; 0x08
+ 49a:	c7 01       	movw	r24, r14
+ 49c:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 4a0:	4b 85       	ldd	r20, Y+11	; 0x0b
+ 4a2:	69 85       	ldd	r22, Y+9	; 0x09
+ 4a4:	7a 85       	ldd	r23, Y+10	; 0x0a
+ 4a6:	c8 01       	movw	r24, r16
+ 4a8:	0e 94 14 04 	call	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+ 4ac:	4e 85       	ldd	r20, Y+14	; 0x0e
+ 4ae:	6c 85       	ldd	r22, Y+12	; 0x0c
+ 4b0:	7d 85       	ldd	r23, Y+13	; 0x0d
+ 4b2:	c2 01       	movw	r24, r4
+ 4b4:	2e 96       	adiw	r28, 0x0e	; 14
+ 4b6:	0f b6       	in	r0, 0x3f	; 63
+ 4b8:	f8 94       	cli
+ 4ba:	de bf       	out	0x3e, r29	; 62
+ 4bc:	0f be       	out	0x3f, r0	; 63
+ 4be:	cd bf       	out	0x3d, r28	; 61
+ 4c0:	df 91       	pop	r29
+ 4c2:	cf 91       	pop	r28
+ 4c4:	1f 91       	pop	r17
+ 4c6:	0f 91       	pop	r16
+ 4c8:	ff 90       	pop	r15
+ 4ca:	ef 90       	pop	r14
+ 4cc:	df 90       	pop	r13
+ 4ce:	cf 90       	pop	r12
+ 4d0:	bf 90       	pop	r11
+ 4d2:	af 90       	pop	r10
+ 4d4:	9f 90       	pop	r9
+ 4d6:	8f 90       	pop	r8
+ 4d8:	7f 90       	pop	r7
+ 4da:	6f 90       	pop	r6
+ 4dc:	5f 90       	pop	r5
+ 4de:	4f 90       	pop	r4
+ 4e0:	3f 90       	pop	r3
+ 4e2:	2f 90       	pop	r2
+ 4e4:	0c 94 14 04 	jmp	0x828	; 0x828 <_ZN10PinControl14initializationEPVhh>
+
+000004e8 <_ZN7hd4478011setHalfDataEh>:
+ 4e8:	1f 93       	push	r17
+ 4ea:	cf 93       	push	r28
+ 4ec:	df 93       	push	r29
+ 4ee:	ec 01       	movw	r28, r24
+ 4f0:	16 2f       	mov	r17, r22
+ 4f2:	0e 96       	adiw	r24, 0x0e	; 14
+ 4f4:	60 ff       	sbrs	r22, 0
+ 4f6:	03 c0       	rjmp	.+6      	; 0x4fe <_ZN7hd4478011setHalfDataEh+0x16>
+ 4f8:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 4fc:	02 c0       	rjmp	.+4      	; 0x502 <_ZN7hd4478011setHalfDataEh+0x1a>
+ 4fe:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 502:	ce 01       	movw	r24, r28
+ 504:	45 96       	adiw	r24, 0x15	; 21
+ 506:	11 ff       	sbrs	r17, 1
+ 508:	03 c0       	rjmp	.+6      	; 0x510 <_ZN7hd4478011setHalfDataEh+0x28>
+ 50a:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 50e:	02 c0       	rjmp	.+4      	; 0x514 <_ZN7hd4478011setHalfDataEh+0x2c>
+ 510:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 514:	ce 01       	movw	r24, r28
+ 516:	4c 96       	adiw	r24, 0x1c	; 28
+ 518:	12 ff       	sbrs	r17, 2
+ 51a:	03 c0       	rjmp	.+6      	; 0x522 <_ZN7hd4478011setHalfDataEh+0x3a>
+ 51c:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 520:	02 c0       	rjmp	.+4      	; 0x526 <_ZN7hd4478011setHalfDataEh+0x3e>
+ 522:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 526:	ce 01       	movw	r24, r28
+ 528:	83 96       	adiw	r24, 0x23	; 35
+ 52a:	13 ff       	sbrs	r17, 3
+ 52c:	05 c0       	rjmp	.+10     	; 0x538 <_ZN7hd4478011setHalfDataEh+0x50>
+ 52e:	df 91       	pop	r29
+ 530:	cf 91       	pop	r28
+ 532:	1f 91       	pop	r17
+ 534:	0c 94 21 04 	jmp	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 538:	df 91       	pop	r29
+ 53a:	cf 91       	pop	r28
+ 53c:	1f 91       	pop	r17
+ 53e:	0c 94 33 04 	jmp	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+
+00000542 <_ZN7hd4478012WriteCommandEh>:
+ 542:	ff 92       	push	r15
+ 544:	0f 93       	push	r16
+ 546:	1f 93       	push	r17
+ 548:	cf 93       	push	r28
+ 54a:	df 93       	push	r29
+ 54c:	8c 01       	movw	r16, r24
+ 54e:	f6 2e       	mov	r15, r22
+ 550:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 554:	e8 01       	movw	r28, r16
+ 556:	27 96       	adiw	r28, 0x07	; 7
+ 558:	ce 01       	movw	r24, r28
+ 55a:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 55e:	6f 2d       	mov	r22, r15
+ 560:	70 e0       	ldi	r23, 0x00	; 0
+ 562:	84 e0       	ldi	r24, 0x04	; 4
+ 564:	75 95       	asr	r23
+ 566:	67 95       	ror	r22
+ 568:	8a 95       	dec	r24
+ 56a:	e1 f7       	brne	.-8      	; 0x564 <_ZN7hd4478012WriteCommandEh+0x22>
+ 56c:	c8 01       	movw	r24, r16
+ 56e:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN7hd4478011setHalfDataEh>
+ 572:	ce 01       	movw	r24, r28
+ 574:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 578:	ce 01       	movw	r24, r28
+ 57a:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 57e:	6f 2d       	mov	r22, r15
+ 580:	c8 01       	movw	r24, r16
+ 582:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN7hd4478011setHalfDataEh>
+ 586:	ce 01       	movw	r24, r28
+ 588:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 58c:	80 ea       	ldi	r24, 0xA0	; 160
+ 58e:	8a 95       	dec	r24
+ 590:	f1 f7       	brne	.-4      	; 0x58e <_ZN7hd4478012WriteCommandEh+0x4c>
+ 592:	df 91       	pop	r29
+ 594:	cf 91       	pop	r28
+ 596:	1f 91       	pop	r17
+ 598:	0f 91       	pop	r16
+ 59a:	ff 90       	pop	r15
+ 59c:	08 95       	ret
+
+0000059e <_ZN7hd447809WriteDataEh>:
+ 59e:	ff 92       	push	r15
+ 5a0:	0f 93       	push	r16
+ 5a2:	1f 93       	push	r17
+ 5a4:	cf 93       	push	r28
+ 5a6:	df 93       	push	r29
+ 5a8:	8c 01       	movw	r16, r24
+ 5aa:	f6 2e       	mov	r15, r22
+ 5ac:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 5b0:	e8 01       	movw	r28, r16
+ 5b2:	27 96       	adiw	r28, 0x07	; 7
+ 5b4:	ce 01       	movw	r24, r28
+ 5b6:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 5ba:	6f 2d       	mov	r22, r15
+ 5bc:	70 e0       	ldi	r23, 0x00	; 0
+ 5be:	84 e0       	ldi	r24, 0x04	; 4
+ 5c0:	75 95       	asr	r23
+ 5c2:	67 95       	ror	r22
+ 5c4:	8a 95       	dec	r24
+ 5c6:	e1 f7       	brne	.-8      	; 0x5c0 <_ZN7hd447809WriteDataEh+0x22>
+ 5c8:	c8 01       	movw	r24, r16
+ 5ca:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN7hd4478011setHalfDataEh>
+ 5ce:	ce 01       	movw	r24, r28
+ 5d0:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 5d4:	ce 01       	movw	r24, r28
+ 5d6:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 5da:	6f 2d       	mov	r22, r15
+ 5dc:	c8 01       	movw	r24, r16
+ 5de:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN7hd4478011setHalfDataEh>
+ 5e2:	ce 01       	movw	r24, r28
+ 5e4:	df 91       	pop	r29
+ 5e6:	cf 91       	pop	r28
+ 5e8:	1f 91       	pop	r17
+ 5ea:	0f 91       	pop	r16
+ 5ec:	ff 90       	pop	r15
+ 5ee:	0c 94 33 04 	jmp	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+
+000005f2 <_ZN7hd447805clearEv>:
+ 5f2:	61 e0       	ldi	r22, 0x01	; 1
+ 5f4:	0c 94 a1 02 	jmp	0x542	; 0x542 <_ZN7hd4478012WriteCommandEh>
+
+000005f8 <_ZN7hd447806goHomeEv>:
+ 5f8:	62 e0       	ldi	r22, 0x02	; 2
+ 5fa:	0c 94 a1 02 	jmp	0x542	; 0x542 <_ZN7hd4478012WriteCommandEh>
+
+000005fe <_ZN7hd4478013LCD_InitalizeEv>:
+ 5fe:	0f 93       	push	r16
+ 600:	1f 93       	push	r17
+ 602:	cf 93       	push	r28
+ 604:	df 93       	push	r29
+ 606:	ec 01       	movw	r28, r24
+ 608:	0e 96       	adiw	r24, 0x0e	; 14
+ 60a:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 60e:	ce 01       	movw	r24, r28
+ 610:	45 96       	adiw	r24, 0x15	; 21
+ 612:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 616:	ce 01       	movw	r24, r28
+ 618:	4c 96       	adiw	r24, 0x1c	; 28
+ 61a:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 61e:	ce 01       	movw	r24, r28
+ 620:	83 96       	adiw	r24, 0x23	; 35
+ 622:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 626:	8e 01       	movw	r16, r28
+ 628:	09 5f       	subi	r16, 0xF9	; 249
+ 62a:	1f 4f       	sbci	r17, 0xFF	; 255
+ 62c:	c8 01       	movw	r24, r16
+ 62e:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 632:	ce 01       	movw	r24, r28
+ 634:	0e 94 47 04 	call	0x88e	; 0x88e <_ZN10PinControl11setAsOutputEv>
+ 638:	2f ef       	ldi	r18, 0xFF	; 255
+ 63a:	89 e6       	ldi	r24, 0x69	; 105
+ 63c:	98 e1       	ldi	r25, 0x18	; 24
+ 63e:	21 50       	subi	r18, 0x01	; 1
+ 640:	80 40       	sbci	r24, 0x00	; 0
+ 642:	90 40       	sbci	r25, 0x00	; 0
+ 644:	e1 f7       	brne	.-8      	; 0x63e <_ZN7hd4478013LCD_InitalizeEv+0x40>
+ 646:	00 c0       	rjmp	.+0      	; 0x648 <_ZN7hd4478013LCD_InitalizeEv+0x4a>
+ 648:	00 00       	nop
+ 64a:	ce 01       	movw	r24, r28
+ 64c:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 650:	c8 01       	movw	r24, r16
+ 652:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 656:	c8 01       	movw	r24, r16
+ 658:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 65c:	63 e0       	ldi	r22, 0x03	; 3
+ 65e:	ce 01       	movw	r24, r28
+ 660:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN7hd4478011setHalfDataEh>
+ 664:	c8 01       	movw	r24, r16
+ 666:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 66a:	8f e0       	ldi	r24, 0x0F	; 15
+ 66c:	97 e2       	ldi	r25, 0x27	; 39
+ 66e:	01 97       	sbiw	r24, 0x01	; 1
+ 670:	f1 f7       	brne	.-4      	; 0x66e <_ZN7hd4478013LCD_InitalizeEv+0x70>
+ 672:	00 c0       	rjmp	.+0      	; 0x674 <_ZN7hd4478013LCD_InitalizeEv+0x76>
+ 674:	00 00       	nop
+ 676:	c8 01       	movw	r24, r16
+ 678:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 67c:	c8 01       	movw	r24, r16
+ 67e:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 682:	87 ec       	ldi	r24, 0xC7	; 199
+ 684:	90 e0       	ldi	r25, 0x00	; 0
+ 686:	01 97       	sbiw	r24, 0x01	; 1
+ 688:	f1 f7       	brne	.-4      	; 0x686 <_ZN7hd4478013LCD_InitalizeEv+0x88>
+ 68a:	00 c0       	rjmp	.+0      	; 0x68c <_ZN7hd4478013LCD_InitalizeEv+0x8e>
+ 68c:	00 00       	nop
+ 68e:	c8 01       	movw	r24, r16
+ 690:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 694:	c8 01       	movw	r24, r16
+ 696:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 69a:	87 ec       	ldi	r24, 0xC7	; 199
+ 69c:	90 e0       	ldi	r25, 0x00	; 0
+ 69e:	01 97       	sbiw	r24, 0x01	; 1
+ 6a0:	f1 f7       	brne	.-4      	; 0x69e <_ZN7hd4478013LCD_InitalizeEv+0xa0>
+ 6a2:	00 c0       	rjmp	.+0      	; 0x6a4 <_ZN7hd4478013LCD_InitalizeEv+0xa6>
+ 6a4:	00 00       	nop
+ 6a6:	c8 01       	movw	r24, r16
+ 6a8:	0e 94 21 04 	call	0x842	; 0x842 <_ZN10PinControl6setPinEv>
+ 6ac:	62 e0       	ldi	r22, 0x02	; 2
+ 6ae:	ce 01       	movw	r24, r28
+ 6b0:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN7hd4478011setHalfDataEh>
+ 6b4:	c8 01       	movw	r24, r16
+ 6b6:	0e 94 33 04 	call	0x866	; 0x866 <_ZN10PinControl8clearPinEv>
+ 6ba:	68 e2       	ldi	r22, 0x28	; 40
+ 6bc:	ce 01       	movw	r24, r28
+ 6be:	0e 94 a1 02 	call	0x542	; 0x542 <_ZN7hd4478012WriteCommandEh>
+ 6c2:	66 e0       	ldi	r22, 0x06	; 6
+ 6c4:	ce 01       	movw	r24, r28
+ 6c6:	0e 94 a1 02 	call	0x542	; 0x542 <_ZN7hd4478012WriteCommandEh>
+ 6ca:	6c e0       	ldi	r22, 0x0C	; 12
+ 6cc:	ce 01       	movw	r24, r28
+ 6ce:	0e 94 a1 02 	call	0x542	; 0x542 <_ZN7hd4478012WriteCommandEh>
+ 6d2:	ce 01       	movw	r24, r28
+ 6d4:	0e 94 f9 02 	call	0x5f2	; 0x5f2 <_ZN7hd447805clearEv>
+ 6d8:	8f e9       	ldi	r24, 0x9F	; 159
+ 6da:	9f e0       	ldi	r25, 0x0F	; 15
+ 6dc:	01 97       	sbiw	r24, 0x01	; 1
+ 6de:	f1 f7       	brne	.-4      	; 0x6dc <_ZN7hd4478013LCD_InitalizeEv+0xde>
+ 6e0:	00 c0       	rjmp	.+0      	; 0x6e2 <_ZN7hd4478013LCD_InitalizeEv+0xe4>
+ 6e2:	00 00       	nop
+ 6e4:	ce 01       	movw	r24, r28
+ 6e6:	0e 94 fc 02 	call	0x5f8	; 0x5f8 <_ZN7hd447806goHomeEv>
+ 6ea:	8f e9       	ldi	r24, 0x9F	; 159
+ 6ec:	9f e0       	ldi	r25, 0x0F	; 15
+ 6ee:	01 97       	sbiw	r24, 0x01	; 1
+ 6f0:	f1 f7       	brne	.-4      	; 0x6ee <_ZN7hd4478013LCD_InitalizeEv+0xf0>
+ 6f2:	00 c0       	rjmp	.+0      	; 0x6f4 <_ZN7hd4478013LCD_InitalizeEv+0xf6>
+ 6f4:	00 00       	nop
+ 6f6:	df 91       	pop	r29
+ 6f8:	cf 91       	pop	r28
+ 6fa:	1f 91       	pop	r17
+ 6fc:	0f 91       	pop	r16
+ 6fe:	08 95       	ret
+
+00000700 <main>:
+ 700:	cf 93       	push	r28
+ 702:	df 93       	push	r29
+ 704:	cd b7       	in	r28, 0x3d	; 61
+ 706:	de b7       	in	r29, 0x3e	; 62
+ 708:	c4 55       	subi	r28, 0x54	; 84
+ 70a:	d1 09       	sbc	r29, r1
+ 70c:	0f b6       	in	r0, 0x3f	; 63
+ 70e:	f8 94       	cli
+ 710:	de bf       	out	0x3e, r29	; 62
+ 712:	0f be       	out	0x3f, r0	; 63
+ 714:	cd bf       	out	0x3d, r28	; 61
+ 716:	86 e0       	ldi	r24, 0x06	; 6
+ 718:	8f 93       	push	r24
+ 71a:	1f 92       	push	r1
+ 71c:	82 e2       	ldi	r24, 0x22	; 34
+ 71e:	8f 93       	push	r24
+ 720:	95 e0       	ldi	r25, 0x05	; 5
+ 722:	9f 93       	push	r25
+ 724:	1f 92       	push	r1
+ 726:	8f 93       	push	r24
+ 728:	84 e0       	ldi	r24, 0x04	; 4
+ 72a:	88 2e       	mov	r8, r24
+ 72c:	92 e2       	ldi	r25, 0x22	; 34
+ 72e:	a9 2e       	mov	r10, r25
+ 730:	b1 2c       	mov	r11, r1
+ 732:	23 e0       	ldi	r18, 0x03	; 3
+ 734:	c2 2e       	mov	r12, r18
+ 736:	32 e2       	ldi	r19, 0x22	; 34
+ 738:	e3 2e       	mov	r14, r19
+ 73a:	f1 2c       	mov	r15, r1
+ 73c:	02 e0       	ldi	r16, 0x02	; 2
+ 73e:	22 e2       	ldi	r18, 0x22	; 34
+ 740:	30 e0       	ldi	r19, 0x00	; 0
+ 742:	40 e0       	ldi	r20, 0x00	; 0
+ 744:	62 e2       	ldi	r22, 0x22	; 34
+ 746:	70 e0       	ldi	r23, 0x00	; 0
+ 748:	ce 01       	movw	r24, r28
+ 74a:	01 96       	adiw	r24, 0x01	; 1
+ 74c:	0e 94 e1 01 	call	0x3c2	; 0x3c2 <_ZN7hd44780C1EPVhhS1_hS1_hS1_hS1_hS1_h>
+ 750:	ce 01       	movw	r24, r28
+ 752:	01 96       	adiw	r24, 0x01	; 1
+ 754:	0e 94 ff 02 	call	0x5fe	; 0x5fe <_ZN7hd4478013LCD_InitalizeEv>
+ 758:	1f 92       	push	r1
+ 75a:	1f 92       	push	r1
+ 75c:	1f 92       	push	r1
+ 75e:	1f 92       	push	r1
+ 760:	1f 92       	push	r1
+ 762:	8c e4       	ldi	r24, 0x4C	; 76
+ 764:	8f 93       	push	r24
+ 766:	80 e4       	ldi	r24, 0x40	; 64
+ 768:	8f 93       	push	r24
+ 76a:	81 e0       	ldi	r24, 0x01	; 1
+ 76c:	8f 93       	push	r24
+ 76e:	47 e0       	ldi	r20, 0x07	; 7
+ 770:	84 2e       	mov	r8, r20
+ 772:	55 e2       	ldi	r21, 0x25	; 37
+ 774:	a5 2e       	mov	r10, r21
+ 776:	b1 2c       	mov	r11, r1
+ 778:	64 e0       	ldi	r22, 0x04	; 4
+ 77a:	c6 2e       	mov	r12, r22
+ 77c:	75 e2       	ldi	r23, 0x25	; 37
+ 77e:	e7 2e       	mov	r14, r23
+ 780:	f1 2c       	mov	r15, r1
+ 782:	06 e0       	ldi	r16, 0x06	; 6
+ 784:	25 e2       	ldi	r18, 0x25	; 37
+ 786:	30 e0       	ldi	r19, 0x00	; 0
+ 788:	45 e0       	ldi	r20, 0x05	; 5
+ 78a:	65 e2       	ldi	r22, 0x25	; 37
+ 78c:	70 e0       	ldi	r23, 0x00	; 0
+ 78e:	ce 01       	movw	r24, r28
+ 790:	8b 96       	adiw	r24, 0x2b	; 43
+ 792:	0e 94 4a 00 	call	0x94	; 0x94 <_ZN9SPI_classC1EPVhhS1_hS1_hS1_hbhS1_bbbb>
+ 796:	78 94       	sei
+ 798:	45 e0       	ldi	r20, 0x05	; 5
+ 79a:	68 e2       	ldi	r22, 0x28	; 40
+ 79c:	70 e0       	ldi	r23, 0x00	; 0
+ 79e:	ce 01       	movw	r24, r28
+ 7a0:	82 5b       	subi	r24, 0xB2	; 178
+ 7a2:	9f 4f       	sbci	r25, 0xFF	; 255
+ 7a4:	0e 94 c7 01 	call	0x38e	; 0x38e <_ZN7ds18b20C1EPVhh>
+ 7a8:	25 9a       	sbi	0x04, 5	; 4
+ 7aa:	ce 01       	movw	r24, r28
+ 7ac:	8b 96       	adiw	r24, 0x2b	; 43
+ 7ae:	0e 94 7d 01 	call	0x2fa	; 0x2fa <_ZN9SPI_class9SPIenableEv>
+ 7b2:	0f b6       	in	r0, 0x3f	; 63
+ 7b4:	f8 94       	cli
+ 7b6:	de bf       	out	0x3e, r29	; 62
+ 7b8:	0f be       	out	0x3f, r0	; 63
+ 7ba:	cd bf       	out	0x3d, r28	; 61
+ 7bc:	11 e4       	ldi	r17, 0x41	; 65
+ 7be:	61 2f       	mov	r22, r17
+ 7c0:	ce 01       	movw	r24, r28
+ 7c2:	8b 96       	adiw	r24, 0x2b	; 43
+ 7c4:	0e 94 b9 01 	call	0x372	; 0x372 <_ZN9SPI_class9writeCharEc>
+ 7c8:	8f ec       	ldi	r24, 0xCF	; 207
+ 7ca:	97 e0       	ldi	r25, 0x07	; 7
+ 7cc:	01 97       	sbiw	r24, 0x01	; 1
+ 7ce:	f1 f7       	brne	.-4      	; 0x7cc <main+0xcc>
+ 7d0:	00 c0       	rjmp	.+0      	; 0x7d2 <main+0xd2>
+ 7d2:	00 00       	nop
+ 7d4:	ce 01       	movw	r24, r28
+ 7d6:	8b 96       	adiw	r24, 0x2b	; 43
+ 7d8:	0e 94 c0 01 	call	0x380	; 0x380 <_ZN9SPI_class8readCharEv>
+ 7dc:	08 2f       	mov	r16, r24
+ 7de:	ce 01       	movw	r24, r28
+ 7e0:	01 96       	adiw	r24, 0x01	; 1
+ 7e2:	0e 94 f9 02 	call	0x5f2	; 0x5f2 <_ZN7hd447805clearEv>
+ 7e6:	8f e9       	ldi	r24, 0x9F	; 159
+ 7e8:	9f e0       	ldi	r25, 0x0F	; 15
+ 7ea:	01 97       	sbiw	r24, 0x01	; 1
+ 7ec:	f1 f7       	brne	.-4      	; 0x7ea <main+0xea>
+ 7ee:	00 c0       	rjmp	.+0      	; 0x7f0 <main+0xf0>
+ 7f0:	00 00       	nop
+ 7f2:	ce 01       	movw	r24, r28
+ 7f4:	01 96       	adiw	r24, 0x01	; 1
+ 7f6:	0e 94 fc 02 	call	0x5f8	; 0x5f8 <_ZN7hd447806goHomeEv>
+ 7fa:	8f e9       	ldi	r24, 0x9F	; 159
+ 7fc:	9f e0       	ldi	r25, 0x0F	; 15
+ 7fe:	01 97       	sbiw	r24, 0x01	; 1
+ 800:	f1 f7       	brne	.-4      	; 0x7fe <main+0xfe>
+ 802:	00 c0       	rjmp	.+0      	; 0x804 <main+0x104>
+ 804:	00 00       	nop
+ 806:	60 2f       	mov	r22, r16
+ 808:	ce 01       	movw	r24, r28
+ 80a:	01 96       	adiw	r24, 0x01	; 1
+ 80c:	0e 94 cf 02 	call	0x59e	; 0x59e <_ZN7hd447809WriteDataEh>
+ 810:	1f 5f       	subi	r17, 0xFF	; 255
+ 812:	9f ef       	ldi	r25, 0xFF	; 255
+ 814:	2e e9       	ldi	r18, 0x9E	; 158
+ 816:	84 e2       	ldi	r24, 0x24	; 36
+ 818:	91 50       	subi	r25, 0x01	; 1
+ 81a:	20 40       	sbci	r18, 0x00	; 0
+ 81c:	80 40       	sbci	r24, 0x00	; 0
+ 81e:	e1 f7       	brne	.-8      	; 0x818 <main+0x118>
+ 820:	00 c0       	rjmp	.+0      	; 0x822 <main+0x122>
+ 822:	00 00       	nop
+ 824:	cc cf       	rjmp	.-104    	; 0x7be <main+0xbe>
+
+00000826 <_ZN10PinControlC1Ev>:
+ 826:	08 95       	ret
+
+00000828 <_ZN10PinControl14initializationEPVhh>:
+ 828:	fc 01       	movw	r30, r24
+ 82a:	71 83       	std	Z+1, r23	; 0x01
+ 82c:	60 83       	st	Z, r22
+ 82e:	cb 01       	movw	r24, r22
+ 830:	01 97       	sbiw	r24, 0x01	; 1
+ 832:	93 83       	std	Z+3, r25	; 0x03
+ 834:	82 83       	std	Z+2, r24	; 0x02
+ 836:	62 50       	subi	r22, 0x02	; 2
+ 838:	71 09       	sbc	r23, r1
+ 83a:	75 83       	std	Z+5, r23	; 0x05
+ 83c:	64 83       	std	Z+4, r22	; 0x04
+ 83e:	46 83       	std	Z+6, r20	; 0x06
+ 840:	08 95       	ret
+
+00000842 <_ZN10PinControl6setPinEv>:
+ 842:	dc 01       	movw	r26, r24
+ 844:	ed 91       	ld	r30, X+
+ 846:	fc 91       	ld	r31, X
+ 848:	11 97       	sbiw	r26, 0x01	; 1
+ 84a:	40 81       	ld	r20, Z
+ 84c:	21 e0       	ldi	r18, 0x01	; 1
+ 84e:	30 e0       	ldi	r19, 0x00	; 0
+ 850:	c9 01       	movw	r24, r18
+ 852:	16 96       	adiw	r26, 0x06	; 6
+ 854:	0c 90       	ld	r0, X
+ 856:	02 c0       	rjmp	.+4      	; 0x85c <_ZN10PinControl6setPinEv+0x1a>
+ 858:	88 0f       	add	r24, r24
+ 85a:	99 1f       	adc	r25, r25
+ 85c:	0a 94       	dec	r0
+ 85e:	e2 f7       	brpl	.-8      	; 0x858 <_ZN10PinControl6setPinEv+0x16>
+ 860:	84 2b       	or	r24, r20
+ 862:	80 83       	st	Z, r24
+ 864:	08 95       	ret
+
+00000866 <_ZN10PinControl8clearPinEv>:
+ 866:	dc 01       	movw	r26, r24
+ 868:	ed 91       	ld	r30, X+
+ 86a:	fc 91       	ld	r31, X
+ 86c:	11 97       	sbiw	r26, 0x01	; 1
+ 86e:	40 81       	ld	r20, Z
+ 870:	21 e0       	ldi	r18, 0x01	; 1
+ 872:	30 e0       	ldi	r19, 0x00	; 0
+ 874:	b9 01       	movw	r22, r18
+ 876:	16 96       	adiw	r26, 0x06	; 6
+ 878:	0c 90       	ld	r0, X
+ 87a:	02 c0       	rjmp	.+4      	; 0x880 <_ZN10PinControl8clearPinEv+0x1a>
+ 87c:	66 0f       	add	r22, r22
+ 87e:	77 1f       	adc	r23, r23
+ 880:	0a 94       	dec	r0
+ 882:	e2 f7       	brpl	.-8      	; 0x87c <_ZN10PinControl8clearPinEv+0x16>
+ 884:	cb 01       	movw	r24, r22
+ 886:	80 95       	com	r24
+ 888:	84 23       	and	r24, r20
+ 88a:	80 83       	st	Z, r24
+ 88c:	08 95       	ret
+
+0000088e <_ZN10PinControl11setAsOutputEv>:
+ 88e:	dc 01       	movw	r26, r24
+ 890:	12 96       	adiw	r26, 0x02	; 2
+ 892:	ed 91       	ld	r30, X+
+ 894:	fc 91       	ld	r31, X
+ 896:	13 97       	sbiw	r26, 0x03	; 3
+ 898:	40 81       	ld	r20, Z
+ 89a:	21 e0       	ldi	r18, 0x01	; 1
+ 89c:	30 e0       	ldi	r19, 0x00	; 0
+ 89e:	c9 01       	movw	r24, r18
+ 8a0:	16 96       	adiw	r26, 0x06	; 6
+ 8a2:	0c 90       	ld	r0, X
+ 8a4:	02 c0       	rjmp	.+4      	; 0x8aa <_ZN10PinControl11setAsOutputEv+0x1c>
+ 8a6:	88 0f       	add	r24, r24
+ 8a8:	99 1f       	adc	r25, r25
+ 8aa:	0a 94       	dec	r0
+ 8ac:	e2 f7       	brpl	.-8      	; 0x8a6 <_ZN10PinControl11setAsOutputEv+0x18>
+ 8ae:	84 2b       	or	r24, r20
+ 8b0:	80 83       	st	Z, r24
+ 8b2:	08 95       	ret
+
+000008b4 <_ZN10PinControl10setAsInputEv>:
+ 8b4:	dc 01       	movw	r26, r24
+ 8b6:	12 96       	adiw	r26, 0x02	; 2
+ 8b8:	ed 91       	ld	r30, X+
+ 8ba:	fc 91       	ld	r31, X
+ 8bc:	13 97       	sbiw	r26, 0x03	; 3
+ 8be:	40 81       	ld	r20, Z
+ 8c0:	21 e0       	ldi	r18, 0x01	; 1
+ 8c2:	30 e0       	ldi	r19, 0x00	; 0
+ 8c4:	b9 01       	movw	r22, r18
+ 8c6:	16 96       	adiw	r26, 0x06	; 6
+ 8c8:	0c 90       	ld	r0, X
+ 8ca:	02 c0       	rjmp	.+4      	; 0x8d0 <_ZN10PinControl10setAsInputEv+0x1c>
+ 8cc:	66 0f       	add	r22, r22
+ 8ce:	77 1f       	adc	r23, r23
+ 8d0:	0a 94       	dec	r0
+ 8d2:	e2 f7       	brpl	.-8      	; 0x8cc <_ZN10PinControl10setAsInputEv+0x18>
+ 8d4:	cb 01       	movw	r24, r22
+ 8d6:	80 95       	com	r24
+ 8d8:	84 23       	and	r24, r20
+ 8da:	80 83       	st	Z, r24
+ 8dc:	08 95       	ret
+
+000008de <_exit>:
+ 8de:	f8 94       	cli
+
+000008e0 <__stop_program>:
+ 8e0:	ff cf       	rjmp	.-2      	; 0x8e0 <__stop_program>
