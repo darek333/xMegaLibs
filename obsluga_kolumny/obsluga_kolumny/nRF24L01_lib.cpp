@@ -9,7 +9,8 @@
 
 nRF24L01::nRF24L01(SPI_class *_SPI_handler, volatile uint8_t * SSport, uint8_t SSpinNumber)
 {
-	
+	SPI_handler = _SPI_handler;
+	CEpinHandler.initialization(SSport, SSpinNumber);
 }
 
 //Bazowa funkcja do komunikacji. Nie wiem czy nie bêdzie potrzebne opóŸnienie pomiedzy wgraniem do rejestru instrukcji a odczytem uzyskanych informacji. Na logikê powinno tam wyst¹piæ kilka do kilkudziesiêciu us. 
@@ -39,6 +40,7 @@ uint8_t nRF24L01::writeWithNRF24L01(uint8_t command, uint8_t * dataToSend = NULL
 	return StatusRegister;
 }
 
+
 uint8_t nRF24L01::readRegister(uint8_t * data, uint8_t dataLongitude, uint8_t addres)
 {
 	uint8_t StatusRegister = 0;
@@ -49,6 +51,7 @@ uint8_t nRF24L01::readRegister(uint8_t * data, uint8_t dataLongitude, uint8_t ad
 	StatusRegister = writeWithNRF24L01(addres, NULL, data, dataLongitude);
 	return StatusRegister;
 }
+
 
 uint8_t nRF24L01::writeRegister(uint8_t * data, uint8_t dataLongitude, uint8_t addres)
 {
@@ -82,8 +85,28 @@ uint8_t nRF24L01::writeTXPayload(uint8_t * data, uint8_t dataLongitude)
 
 uint8_t nRF24L01::flushTX()
 {
-	
+	uint8_t StatusRegister = 0;
+	StatusRegister = writeWithNRF24L01(0xE1);
+	return StatusRegister;
 }
-uint8_t nRF24L01::flushRX();
-uint8_t nRF24L01::reUseTxPl();
-uint8_t nRF24L01::Nop();
+
+uint8_t nRF24L01::flushRX()
+{
+	uint8_t StatusRegister = 0;
+	StatusRegister = writeWithNRF24L01(0xE2);
+	return StatusRegister;
+}
+
+uint8_t nRF24L01::reUseTxPl()
+{
+	uint8_t StatusRegister = 0;
+	StatusRegister = writeWithNRF24L01(0xE3);
+	return StatusRegister;
+}
+
+uint8_t nRF24L01::Nop()
+{
+	uint8_t StatusRegister = 0;
+	StatusRegister = writeWithNRF24L01(0xFF);
+	return StatusRegister;
+}
